@@ -10,3 +10,24 @@ POST /<target>/_create/<_id>
     "last_name" : "Gunawan"
 }
 ```
+## Update Partial
+```
+POST /<target>/_update/<_id>
+{
+    "doc": {
+        "first_name": "Ahmad"
+    }
+}
+```
+## Get Data
+```
+{
+    GET /<tagrget>/_doc/<_id>
+}
+```
+## Delete Data
+```
+{
+    DELETE /<tagrget>/_doc/<_id>
+}
+```
