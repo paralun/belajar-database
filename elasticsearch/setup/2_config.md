@@ -26,12 +26,9 @@ instances:
   - name: 'server3'
     dns: [ 'server3.example.com' ]
     ip: [ '192.168.0.13' ]
-  - name: 'centos-8'
-    dns: [ 'centos-8.example.com' ]
-    ip: [ '192.168.0.14' ]
 EOF
 
-$ elasticsearch-certutil cert --keep-ca-key ca --pem --in instance.yml --out certs/certs.zip
+$ elasticsearch-certutil cert --silent --pem --in instance.yml --out certs/certs.zip --keep-ca-key
 ```
 ### Edit Environment File
 ```

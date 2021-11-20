@@ -6,20 +6,33 @@ node.data: true
 path.data: /data/elasticsearch/data
 path.logs: /data/elasticsearch/logs
 bootstrap.memory_lock: true
-network.host: _local_
+network.host: 0.0.0.0
 http.port: 9200
 discovery.seed_hosts: ["node1.paralun.com", "node2.paralun.com", "node3.paralun.com"]
 cluster.initial_master_nodes: ["node-1", "node-2", "node-3"]
 #action.destructive_requires_name: true
 #action.auto_create_index: false
+
 xpack.security.enabled: true
-# https buat komunikasi antar node cluster
+# https buat komunikasi antar node cluster (Java Keystore)
 xpack.security.transport.ssl.enabled: true
 xpack.security.transport.ssl.verification_mode: certificate
+#xpack.security.transport.ssl.keystore.type: (jks, PKCS12)
 xpack.security.transport.ssl.keystore.path: /app/elasticsearch/config/elastic-certificates.p12
+#xpack.security.transport.ssl.keystore.password:
 xpack.security.transport.ssl.truststore.path: /app/elasticsearch/config/elastic-certificates.p12
+#xpack.security.transport.ssl.truststore.password
+# PEM
+#xpack.security.transport.ssl.key:
+#xpack.security.transport.ssl.key_passphrase:
+#xpack.security.transport.ssl.secure_key_passphrase:
+#xpack.security.transport.ssl.certificate:
+#xpack.security.transport.ssl.certificate_authorities
+
 # https buat client
 xpack.security.http.ssl.enabled: true
 xpack.security.http.ssl.key: certs/server1.key
 xpack.security.http.ssl.certificate: certs/server1.crt
 xpack.security.http.ssl.certificate_authorities: certs/ca.crt
+
+#https://www.elastic.co/guide/en/elasticsearch/reference/current/security-settings.html

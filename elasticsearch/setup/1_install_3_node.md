@@ -14,6 +14,7 @@ $ sudo cat <<EOF>> /etc/sysctl.conf
 vm.max_map_count=262144
 EOF
 
+$ sysctl -w vm.max_map_count=262144
 $ sysctl vm.max_map_count
 ```
 ### Edit /etc/security/limits.conf
@@ -21,18 +22,10 @@ $ sysctl vm.max_map_count
 $ sudo vi /etc/security/limits.conf
 webmethod       soft    nproc           unlimited
 webmethod       hard    nproc           unlimited
-webmethod       soft    sigpending      192068
-webmethod       hard    sigpending      192068
-webmethod       soft    msgque ue       819200
-webmethod       hard    msgqueue        819200
 webmethod       soft    nofile          unlimited
 webmethod       hard    nofile          unlimited
 webmethod       soft    memlock         unlimited
 webmethod       hard    memlock         unlimited
-webmethod       soft    stack           10240
-webmethod       hard    stack           10240
-webmethod       soft    core            unlimited
-webmethod       hard    core            unlimited
 ```
 ### Install Elastic
 ```
